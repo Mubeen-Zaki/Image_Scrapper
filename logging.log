@@ -1,0 +1,107 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:05:25] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:05:25] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:05:25] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:05:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ERROR:app:Exception on /review [POST]
+Traceback (most recent call last):
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 32, in search
+    image_data = requests.get(url).content
+  File "/config/.local/lib/python3.8/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/config/.local/lib/python3.8/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/config/.local/lib/python3.8/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/config/.local/lib/python3.8/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/config/.local/lib/python3.8/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/config/.local/lib/python3.8/site-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '/images/branding/searchlogo/1x/googlelogo_desk_heirloom_color_150x55dp.gif': No scheme supplied. Perhaps you meant https:///images/branding/searchlogo/1x/googlelogo_desk_heirloom_color_150x55dp.gif?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 44, in search
+    logging.INFO(e)
+TypeError: 'int' object is not callable
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:05:31] "[35m[1mPOST /review HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /review [POST]
+Traceback (most recent call last):
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 36, in search
+    with open(os.path.join(img_dir,f"{query}_{image_box.get(i)}.jpg"),"wb") as f:
+NameError: name 'image_box' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 45, in search
+    logging.INFO(e)
+TypeError: 'int' object is not callable
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:06:38] "[35m[1mPOST /review HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /review [POST]
+Traceback (most recent call last):
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 36, in search
+    with open(os.path.join(img_dir,f"{query}_{image_boxes.get(i)}.jpg"),"wb") as f:
+  File "/config/.local/lib/python3.8/site-packages/bs4/element.py", line 2428, in __getattr__
+    raise AttributeError(
+AttributeError: ResultSet object has no attribute 'get'. You're probably treating a list of elements like a single element. Did you call find_all() when you meant to call find()?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/config/.local/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/config/workspace/Image_Scrapper/img_scraper/app.py", line 45, in search
+    logging.INFO(e)
+TypeError: 'int' object is not callable
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:07:32] "[35m[1mPOST /review HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.18.0.3:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:08:09] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:08:09] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:08:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:09:25] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:09:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.2 - - [03/Sep/2023 09:09:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
