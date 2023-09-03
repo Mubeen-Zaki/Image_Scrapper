@@ -35,7 +35,7 @@ def search():
                                 l.append(my_dict)
                                 with open(os.path.join(img_dir,f"{query}_{image_boxes.index(i)}.jpg"),"wb") as f:
                                         f.write(image_data)
-                        db_url = "mongodb+srv://linux3760:linux3760@cluster0.urxsqur.mongodb.net/?retryWrites=true&w=majority"
+                        db_url = "mongodb+srv://user.name:user.password@cluster0.urxsqur.mongodb.net/?retryWrites=true&w=majority" # replace user.name & user.password with your name & password
                         connection = pymongo.MongoClient(db_url)
                         database = connection["Image_Scrapper"]
                         collection = database["Images_Data"]
